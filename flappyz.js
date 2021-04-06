@@ -1,32 +1,8 @@
+import { board, boardContext } from "./src/consts/board.js";
+import {sprite, SCORE_S, FLAP, HIT, SWOOSHING, DIE} from "./src/consts/sfx.js";
+import {DEGREE} from "./src/consts/general.js";
 
-// SELECT board
-const board = document.getElementById ("zamboard");
-const boardContext = board.getContext ("2d");
-
-
-// GAME VARS AND CONSTS
 let frames = 0;
-const DEGREE = Math.PI/180;
-
-// LOAD SPRITE IMAGE
-const sprite = new Image();
-sprite.src = "img/sprite.png";
-
-// LOAD SOUNDS
-const SCORE_S = new Audio();
-SCORE_S.src = "audio/sfx_point.wav";
-
-const FLAP = new Audio();
-FLAP.src = "audio/sfx_flap.wav";
-
-const HIT = new Audio();
-HIT.src = "audio/sfx_hit.wav";
-
-const SWOOSHING = new Audio();
-SWOOSHING.src = "audio/sfx_swooshing.wav";
-
-const DIE = new Audio();
-DIE.src = "audio/sfx_die.wav";
 
 // GAME STATE
 const state = {
