@@ -1,9 +1,8 @@
 import { board, boardContext } from "./../consts/board.js";
-import {foreground} from "./../entities/scenario.js"
-import {game, DEGREE, sprite} from "./../consts/general.js";
-import {DIE, HIT, SCORE_S} from "./../consts/sfx.js";
+import {game, sprite} from "./../consts/general.js";
+import {HIT, SCORE_S} from "./../consts/sfx.js";
 import {zambird} from "./../entities/zambird.js"
-import {score, getReady, gameOver} from "./../entities/states.js"
+import {score} from "./../entities/states.js"
 
 const pipes = {
     position : [],

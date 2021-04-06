@@ -1,6 +1,6 @@
 import { board, boardContext } from "./consts/board.js";
-import {SCORE_S, FLAP, HIT, SWOOSHING, DIE} from "./consts/sfx.js";
-import {DEGREE, game, sprite, startBtn} from "./consts/general.js";
+import {FLAP, SWOOSHING} from "./consts/sfx.js";
+import {game, startBtn} from "./consts/general.js";
 import {background, foreground} from "./entities/scenario.js"
 import {zambird} from "./entities/zambird.js"
 import {pipes} from "./entities/pipes.js"

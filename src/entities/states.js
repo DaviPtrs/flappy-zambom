@@ -1,9 +1,5 @@
 import { board, boardContext } from "./../consts/board.js";
-import {SCORE_S, FLAP, HIT, SWOOSHING, DIE} from "./../consts/sfx.js";
-import {DEGREE, game, sprite} from "./../consts/general.js";
-import {background, foreground} from "./../entities/scenario.js"
-import {zambird} from "./../entities/zambird.js"
-import {pipes} from "./../entities/pipes.js"
+import {game, sprite} from "./../consts/general.js";
 
 // GET READY MESSAGE
 const getReady = {
