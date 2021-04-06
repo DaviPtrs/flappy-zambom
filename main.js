@@ -19,7 +19,6 @@ board.addEventListener("click", function(event){
     }
 });
 
-
 // LOOP
 function loop(){
     update();
