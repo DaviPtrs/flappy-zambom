@@ -117,17 +117,17 @@ const foreground = {
 // BIRD
 const zambird = {
     animation : [
-        {sX: 276, sY : 112},
-        {sX: 276, sY : 139},
-        {sX: 276, sY : 164},
-        {sX: 276, sY : 139}
+        {sX: 277, sY : 112},
+        {sX: 277, sY : 140},
+        {sX: 277, sY : 164},
+        {sX: 277, sY : 140}
     ],
     x : 50,
     y : 150,
     w : 34,
     h : 26,
     
-    radius : 12,
+    radius : 10,
     
     frame : 0,
     
