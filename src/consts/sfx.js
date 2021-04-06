@@ -1,7 +1,3 @@
-// LOAD SPRITE IMAGE
-const sprite = new Image();
-sprite.src = "img/sprite.png";
-
 // LOAD SOUNDS
 const SCORE_S = new Audio();
 SCORE_S.src = "audio/sfx_point.wav";
@@ -18,4 +14,4 @@ SWOOSHING.src = "audio/sfx_swooshing.wav";
 const DIE = new Audio();
 DIE.src = "audio/sfx_die.wav";
 
-export {sprite, SCORE_S, FLAP, HIT, SWOOSHING, DIE};
+export {SCORE_S, FLAP, HIT, SWOOSHING, DIE};
