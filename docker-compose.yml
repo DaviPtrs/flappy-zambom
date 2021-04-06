@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+  flappy_web:
+    image: nginx:stable
+    volumes:
+      - .:/usr/share/nginx/html
+    ports:
+      - "80:80"
