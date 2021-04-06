@@ -127,7 +127,7 @@ const zambird = {
     w : 34,
     h : 26,
     
-    radius : 10,
+    radius : 9,
     
     frame : 0,
     
