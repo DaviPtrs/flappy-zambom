@@ -7,7 +7,7 @@ import { DIE } from './../consts/sfx.js'
 const zambird = {
     // animation position array
     animation: [
-        { sX: 277, sY: 112 },
+        { sX: 277, sY: 113 },
         { sX: 277, sY: 140 },
         { sX: 277, sY: 164 },
         { sX: 277, sY: 140 }
