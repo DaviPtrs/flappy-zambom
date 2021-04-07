@@ -24,9 +24,9 @@ const gameOver = {
     sX: 175,
     sY: 228,
     w: 225,
-    h: 202,
+    h: 270,
     x: board.width / 2 - 225 / 2,
-    y: 90,
+    y: 60,
 
     draw: function () {
         if (game.state.current === game.state.over) {
@@ -52,8 +52,8 @@ const score = {
             this.addText(this.value, (board.width / 2) - 10, 50)
         } else if (game.state.current === game.state.over) { // gameOver screen
             boardContext.font = '25px Teko'
-            this.addText(this.value, 200, 186)
-            this.addText(this.best, 200, 228)
+            this.addText(this.value, 200, 156)
+            this.addText(this.best, 198, 198)
         }
     },
 

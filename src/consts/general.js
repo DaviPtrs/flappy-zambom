@@ -11,16 +11,8 @@ const game = {
     }
 }
 
-// Start button coordinates
-const startBtn = {
-    x: 120,
-    y: 263,
-    w: 83,
-    h: 29
-}
-
 // Sprite object
 const sprite = new Image()
 sprite.src = 'img/sprite.png'
 
-export { DEGREE, game, sprite, startBtn }
+export { DEGREE, game, sprite }

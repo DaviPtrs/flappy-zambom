@@ -1,11 +1,19 @@
 import { board, boardContext } from './consts/board.js'
 import { FLAP, SWOOSHING } from './consts/sfx.js'
-import { game, startBtn } from './consts/general.js'
+import { game } from './consts/general.js'
 import { background, foreground } from './entities/scenario.js'
 import { zambird } from './entities/zambird.js'
 import { pipes } from './entities/pipes.js'
 import { score, getReady, gameOver } from './entities/states.js'
 import { checkClickBounds } from './utils.js'
+
+// Start button coordinates
+const startBtn = {
+    x: 120,
+    y: 233,
+    w: 83,
+    h: 29
+}
 
 // Execute the get ready state tasks
 function doGetReady () {
