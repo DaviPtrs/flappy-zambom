@@ -4,7 +4,7 @@ import { game } from './consts/general.js'
 import { background, foreground } from './entities/scenario.js'
 import { zambird } from './entities/zambird.js'
 import { pipes } from './entities/pipes.js'
-import { score, getReady, gameOver } from './entities/states.js'
+import { score, medal, getReady, gameOver } from './entities/states.js'
 import { checkClickBounds } from './utils.js'
 
 // Start button coordinates
@@ -76,7 +76,6 @@ function doGameOver () {
     }
 
     if (checkClickBounds(clickX, clickY, barbieBtn)) {
-        boardContext.font = '25px Teko'
         barbieMode()
         alert('Barbie mode enabled')
     }
@@ -98,6 +97,7 @@ function draw () {
     zambird.draw()
     getReady.draw()
     gameOver.draw()
+    medal.draw()
     score.draw()
 }
 

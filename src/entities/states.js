@@ -72,4 +72,28 @@ const score = {
     }
 }
 
-export { getReady, gameOver, score }
+const medal = {
+    sX : 360,
+    sY : 157,
+    x : 50,
+    y : 145,
+    width : 45,
+    height : 45,
+    
+    draw: function(){
+        if(game.state.current === game.state.over && score.value === 1){
+            boardContext.drawImage(sprite, this.sX, this.sY, this.width, this.height, this.x, this.y, this.width, this.height)
+        }
+        else if(game.state.current === game.state.over && score.value === 2){
+            boardContext.drawImage(sprite, this.sX, this.sY - 46, this.width, this.height, this.x, this.y, this.width, this.height)
+        }
+        else if(game.state.current === game.state.over && score.value === 3){
+            boardContext.drawImage(sprite, this.sX - 48, this.sY, this.width, this.height, this.x, this.y, this.width, this.height)
+        }
+        else if(game.state.current === game.state.over && score.value === 4){
+            boardContext.drawImage(sprite, this.sX - 48, this.sY - 46, this.width, this.height, this.x, this.y, this.width, this.height)
+        }
+    }
+}
+
+export { getReady, gameOver, score, medal }
