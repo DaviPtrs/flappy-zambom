@@ -8,6 +8,8 @@ const pipes = {
     // array of pipes on screen
     position: [],
 
+    period: 100,
+
     top: {
         sX: 556,
         sY: 0
@@ -44,8 +46,8 @@ const pipes = {
             return
         }
 
-        // Add pipe on screen every 100 frames interval
-        if (game.frames % 100 === 0) {
+        // Add pipe on screen every period frames interval
+        if (game.frames % this.period === 0) {
             this.position.push({
                 x: board.width,
                 y: this.maxYPos * (Math.random() + 1)

@@ -16,7 +16,7 @@ const zambird = {
     // Position and size on canvas
     x: 50,
     y: 150,
-    w: 34,
+    w: 35,
     h: 26,
 
     // Internal vars
@@ -25,7 +25,7 @@ const zambird = {
     rotation: 0, // initial rotation
 
     // Define how easy will hit the camelCase pipe
-    radius: 9,
+    radius: 13,
 
     // Bird boundaries
     top: 0,
