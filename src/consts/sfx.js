@@ -1,4 +1,3 @@
-// LOAD SOUNDS
 const SCORE_S = new Audio();
 SCORE_S.src = "audio/sfx_point.wav";
 

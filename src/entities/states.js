@@ -1,7 +1,7 @@
 import { board, boardContext } from "./../consts/board.js";
 import {game, sprite} from "./../consts/general.js";
 
-// GET READY MESSAGE
+// getReady screen
 const getReady = {
     sX : 0,
     sY : 228,
@@ -18,7 +18,7 @@ const getReady = {
     
 }
 
-// GAME OVER MESSAGE
+// gameOver screen
 const gameOver = {
     sX : 175,
     sY : 228,
@@ -35,7 +35,8 @@ const gameOver = {
     
 }
 
-// SCORE
+// score system object
+// stores the best score on Local Storage
 const score= {
     best : parseInt(localStorage.getItem("best")) || 0,
     value : 0,
@@ -44,21 +45,21 @@ const score= {
         boardContext.fillStyle = "#FFF";
         boardContext.strokeStyle = "#000";
         
-        if(game.state.current == game.state.game){
+        if(game.state.current == game.state.game){ // Main game screen
             boardContext.lineWidth = 2;
             boardContext.font = "35px Teko";
-            boardContext.fillText(this.value, board.width/2, 50);
-            boardContext.strokeText(this.value, board.width/2, 50);
+            this.addText(this.value, (board.width/2) - 10, 50);
             
-        }else if(game.state.current == game.state.over){
-            // SCORE VALUE
+        }else if(game.state.current == game.state.over){ // gameOver screen
             boardContext.font = "25px Teko";
-            boardContext.fillText(this.value, 225, 186);
-            boardContext.strokeText(this.value, 225, 186);
-            // BEST SCORE
-            boardContext.fillText(this.best, 225, 228);
-            boardContext.strokeText(this.best, 225, 228);
+            this.addText(this.value, 200, 186);
+            this.addText(this.best, 200, 228);
         }
+    },
+
+    addText : function(text, x, y){
+        boardContext.fillText(text, x, y);
+        boardContext.strokeText(text, x, y);
     },
     
     reset : function(){

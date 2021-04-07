@@ -1,7 +1,6 @@
 import { board, boardContext } from "./../consts/board.js";
 import {game, sprite} from "./../consts/general.js";
 
-// BACKGROUND
 const background = {
     sX : 0,
     sY : 0,
@@ -18,7 +17,6 @@ const background = {
     
 }
 
-// FOREGROUND
 const foreground = {
     sX: 276,
     sY: 0,
@@ -36,10 +34,13 @@ const foreground = {
     },
     
     update: function(){
-        if(game.state.current == game.state.game){
+        if(game.state.current != game.state.over){
             this.x = (this.x - this.dx)%(this.w/2);
         }
     }
 }
 
-export {background, foreground};
+// Ground Y limit
+const groundY = board.height - foreground.h
+
+export {background, foreground, groundY};

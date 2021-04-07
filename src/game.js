@@ -5,13 +5,16 @@ import {background, foreground} from "./entities/scenario.js"
 import {zambird} from "./entities/zambird.js"
 import {pipes} from "./entities/pipes.js"
 import {score, getReady, gameOver} from "./entities/states.js"
+import {checkClickBounds} from "./utils.js"
 
 
+// Execute the get ready state tasks
 function doGetReady() {
     game.state.current = game.state.game;
     SWOOSHING.play();
 }
 
+// Execute the game main tasks
 function doGame() {
     if(zambird.y - zambird.radius <= 0){
         return -1;
@@ -20,13 +23,13 @@ function doGame() {
     FLAP.play();
 }
 
+// Execute the game over tasks
 function doGameOver() {
     let rect = board.getBoundingClientRect();
     let clickX = event.clientX - rect.left;
     let clickY = event.clientY - rect.top;
     
-    // CHECK IF WE CLICK ON THE START BUTTON
-    if(clickX >= startBtn.x && clickX <= startBtn.x + startBtn.w && clickY >= startBtn.y && clickY <= startBtn.y + startBtn.h){
+    if(checkClickBounds(clickX, clickY, startBtn)){
         pipes.reset();
         zambird.speedReset();
         score.reset();
@@ -34,7 +37,7 @@ function doGameOver() {
     }
 }
 
-// DRAW
+// Draw every object
 function draw(){
     boardContext.fillStyle = "#70c5ce";
     boardContext.fillRect(0, 0, board.width, board.height);
@@ -48,7 +51,7 @@ function draw(){
     score.draw();
 }
 
-// UPDATE
+// Update objects positions and states
 function update(){
     zambird.update();
     foreground.update();

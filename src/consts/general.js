@@ -1,7 +1,6 @@
 const DEGREE = Math.PI/180;
 
-
-// GAME STATE
+// Game object containing states
 const game = {
     frames: 0,
     state : {
@@ -12,7 +11,7 @@ const game = {
     }
 }
 
-// START BUTTON COORD
+// Start button coordinates
 const startBtn = {
     x : 120,
     y : 263,
@@ -20,7 +19,7 @@ const startBtn = {
     h : 29
 }
 
-// LOAD SPRITE IMAGE
+// Sprite object
 const sprite = new Image();
 sprite.src = "img/sprite.png";
 
