@@ -37,16 +37,14 @@ function normalMode () {
     zambird.jump = 4.6
     pipes.period = 100
     pipes.gap = 85
-    pipes.dx = 2
 }
 
 function barbieMode () {
-    zambird.radius = 9
-    zambird.gravity = 0.25
-    zambird.jump = 4.6
-    pipes.period = 100
-    pipes.gap = 85
-    pipes.dx = 2
+    zambird.radius = 6
+    zambird.gravity = 0.23
+    zambird.jump = 3.6
+    pipes.period = 120
+    pipes.gap = 90
 }
 
 
