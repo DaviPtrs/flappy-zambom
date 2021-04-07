@@ -26,6 +26,12 @@ const zambird = {
 
     // Define how easy will hit the camelCase pipe
     radius : 9,
+
+    // Bird boundaries
+    top: 0,
+    bottom: 0,
+    front: 0,
+    back: 0,
     
     // Flap params
     gravity : 0.25, // Gravity that will affect the Y axis
@@ -92,7 +98,11 @@ const zambird = {
                 this.rotation = -25 * DEGREE;
             }
         }
-        
+        // Updating boundaries
+        this.bottom = this.y + this.radius
+        this.top = this.y - this.radius
+        this.front = this.x + this.radius
+        this.back = this.x - this.radius
     },
     
     speedReset : function(){

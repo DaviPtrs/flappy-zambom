@@ -1,5 +1,6 @@
 import { board, boardContext } from "./../consts/board.js";
 import {game, sprite} from "./../consts/general.js";
+import {SCORE_S} from "./../consts/sfx.js";
 
 // getReady screen
 const getReady = {
@@ -64,6 +65,15 @@ const score= {
     
     reset : function(){
         this.value = 0;
+    },
+
+    increase : function (){
+        this.value += 1;
+        SCORE_S.play();
+        if (this.value > this.best){
+            this.best = this.value;
+            localStorage.setItem("best", this.best);
+        }
     }
 }
 

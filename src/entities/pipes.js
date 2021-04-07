@@ -5,10 +5,11 @@ import {zambird} from "./../entities/zambird.js"
 import {score} from "./../entities/states.js"
 
 const pipes = {
+    // array of pipes on screen
     position : [],
     
     top : {
-        sX : 553,
+        sX : 556,
         sY : 0
     },
     bottom:{
@@ -38,41 +39,48 @@ const pipes = {
     },
     
     update: function(){
-        if(game.state.current !== game.state.game) return;
+
+        // not adding pipes until the game starts
+        if(game.state.current !== game.state.game){
+            return;
+        } 
         
+        // Add pipe on screen every 100 frames interval
         if(game.frames%100 == 0){
             this.position.push({
                 x : board.width,
                 y : this.maxYPos * ( Math.random() + 1)
             });
         }
+
+
         for(let i = 0; i < this.position.length; i++){
             let p = this.position[i];
             
             let bottomPipeYPos = p.y + this.h + this.gap;
             
-            // COLLISION DETECTION
-            // TOP PIPE
-            if(zambird.x + zambird.radius > p.x && zambird.x - zambird.radius < p.x + this.w && zambird.y + zambird.radius > p.y && zambird.y - zambird.radius < p.y + this.h){
-                game.state.current = game.state.over;
-                HIT.play();
-            }
-            // BOTTOM PIPE
-            if(zambird.x + zambird.radius > p.x && zambird.x - zambird.radius < p.x + this.w && zambird.y + zambird.radius > bottomPipeYPos && zambird.y - zambird.radius < bottomPipeYPos + this.h){
-                game.state.current = game.state.over;
-                HIT.play();
+            // Collision test
+            if (zambird.front > p.x && zambird.back < (p.x + this.w)){
+                // top
+                if(zambird.bottom > p.y && zambird.top < (p.y + this.h)){
+                    game.state.current = game.state.over;
+                    HIT.play();
+                }
+                // bottom
+                if(zambird.bottom > bottomPipeYPos && zambird.top < (bottomPipeYPos + this.h)){
+                    game.state.current = game.state.over;
+                    HIT.play();
+                }
+
             }
             
-            // MOVE THE PIPES TO THE LEFT
+            // move pipes this.dx distance to the left
             p.x -= this.dx;
             
-            // if the pipes go beyond canvas, we delete them from the array
+            // if the pipes go beyond canvas
             if(p.x + this.w <= 0){
-                this.position.shift();
-                score.value += 1;
-                SCORE_S.play();
-                score.best = Math.max(score.value, score.best);
-                localStorage.setItem("best", score.best);
+                this.position.shift(); // delete it from the array
+                score.increase(); // increase score couting
             }
         }
     },
