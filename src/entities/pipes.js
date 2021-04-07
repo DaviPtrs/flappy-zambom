@@ -74,14 +74,19 @@ const pipes = {
 
             }
             
+            // if bird passed through the pipe
+            if(zambird.x === (p.x + this.w)){ 
+                score.increase();
+            }
+            
             // move pipes this.dx distance to the left
             p.x -= this.dx;
             
-            // if the pipes go beyond canvas
+            // if the pipes go beyond canvas, delete it from the array
             if(p.x + this.w <= 0){
-                this.position.shift(); // delete it from the array
-                score.increase(); // increase score couting
+                this.position.shift();
             }
+
         }
     },
     
