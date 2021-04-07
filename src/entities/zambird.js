@@ -8,9 +8,9 @@ const zambird = {
     // animation position array
     animation: [
         { sX: 277, sY: 112 },
-       // { sX: 277, sY: 140 },
-       // { sX: 277, sY: 164 },
-       // { sX: 277, sY: 140 }
+        { sX: 277, sY: 140 },
+        { sX: 277, sY: 164 },
+        { sX: 277, sY: 140 }
     ],
 
     // Position and size on canvas
@@ -63,12 +63,12 @@ const zambird = {
         }
 
         // Each period, the frame will be incremented by 1
-        //if (game.frames % this.period === 0) {
-        //    this.frame += 1
-        //}
+        if (game.frames % this.period === 0) {
+            this.frame += 1
+        }
 
         // Set frame to the animation count range
-        //this.frame = this.frame % this.animation.length
+        this.frame = this.frame % this.animation.length
 
         // Reset bird on getReady state
         if (game.state.current === game.state.getReady) {
@@ -91,7 +91,7 @@ const zambird = {
             if (this.speed >= this.jump) {
                 // then rotate down
                 this.rotation = 90 * DEGREE
-           //     this.frame = 1
+                this.frame = 1
             } else {
                 // else rotate up
                 this.rotation = -25 * DEGREE
