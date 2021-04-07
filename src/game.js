@@ -5,7 +5,7 @@ import { background, foreground } from './entities/scenario.js'
 import { zambird } from './entities/zambird.js'
 import { pipes } from './entities/pipes.js'
 import { score, getReady, gameOver } from './entities/states.js'
-import { checkClickBounds, addText } from './utils.js'
+import { checkClickBounds } from './utils.js'
 
 // Start button coordinates
 const startBtn = {
@@ -47,7 +47,6 @@ function barbieMode () {
     pipes.gap = 90
 }
 
-
 // Execute the get ready state tasks
 function doGetReady () {
     game.state.current = game.state.game
@@ -76,17 +75,15 @@ function doGameOver () {
         game.state.current = game.state.getReady
     }
 
-
-    if (checkClickBounds(clickX, clickY, barbieBtn)){
+    if (checkClickBounds(clickX, clickY, barbieBtn)) {
         boardContext.font = '25px Teko'
         barbieMode()
-        alert("Barbie mode enabled")
-        
+        alert('Barbie mode enabled')
     }
 
-    if (checkClickBounds(clickX, clickY, normalBtn)){
+    if (checkClickBounds(clickX, clickY, normalBtn)) {
         normalMode()
-        alert("Normal mode enabled")
+        alert('Normal mode enabled')
     }
 }
 
