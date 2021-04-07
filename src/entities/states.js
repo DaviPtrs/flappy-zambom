@@ -73,25 +73,22 @@ const score = {
 }
 
 const medal = {
-    sX : 360,
-    sY : 158,
-    x : 50,
-    y : 145,
-    width : 45,
-    height : 45,
-    
-    draw: function(){
-        if (game.state.current === game.state.over){
-            if (score.value >= 5 && score.value <=10){
-                boardContext.drawImage(sprite, this.sX - 48, this.sY - 46, this.width, this.height, this.x, this.y, this.width, this.height) 
-            }
-            else if(score.value > 10 && score.value <=15){
+    sX: 360,
+    sY: 158,
+    x: 50,
+    y: 145,
+    width: 45,
+    height: 45,
+
+    draw: function () {
+        if (game.state.current === game.state.over) {
+            if (score.value >= 5 && score.value <= 10) {
+                boardContext.drawImage(sprite, this.sX - 48, this.sY - 46, this.width, this.height, this.x, this.y, this.width, this.height)
+            } else if (score.value > 10 && score.value <= 15) {
                 boardContext.drawImage(sprite, this.sX, this.sY - 46, this.width, this.height, this.x, this.y, this.width, this.height)
-            }
-            else if(score.value > 15 && score.value <=20){
+            } else if (score.value > 15 && score.value <= 20) {
                 boardContext.drawImage(sprite, this.sX - 48, this.sY, this.width, this.height, this.x, this.y, this.width, this.height)
-            }
-            else if(score.value > 20){
+            } else if (score.value > 20) {
             boardContext.drawImage(sprite, this.sX, this.sY, this.width, this.height, this.x, this.y, this.width, this.height)
             }
         }
