@@ -15,7 +15,7 @@ const pipes = {
         sY: 0
     },
     bottom: {
-        sX: 502,
+        sX: 500,
         sY: 0
     },
 
