@@ -1,6 +1,7 @@
 import { board, boardContext } from './../consts/board.js'
 import { game, sprite } from './../consts/general.js'
 import { SCORE_S } from './../consts/sfx.js'
+import { addText } from './../utils.js'
 
 // getReady screen
 const getReady = {
@@ -49,17 +50,12 @@ const score = {
         if (game.state.current === game.state.game) { // Main game screen
             boardContext.lineWidth = 2
             boardContext.font = '35px Teko'
-            this.addText(this.value, (board.width / 2) - 10, 50)
+            addText(this.value, (board.width / 2) - 10, 50)
         } else if (game.state.current === game.state.over) { // gameOver screen
             boardContext.font = '25px Teko'
-            this.addText(this.value, 200, 156)
-            this.addText(this.best, 198, 198)
+            addText(this.value, 200, 156)
+            addText(this.best, 198, 198)
         }
-    },
-
-    addText: function (text, x, y) {
-        boardContext.fillText(text, x, y)
-        boardContext.strokeText(text, x, y)
     },
 
     reset: function () {

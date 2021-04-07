@@ -15,6 +15,23 @@ const startBtn = {
     h: 29
 }
 
+// Barbie button coordinates
+const barbieBtn = {
+    x: 80,
+    y: 265,
+    w: 130,
+    h: 29
+}
+
+// normal mode button coordinates
+const normalBtn = {
+    x: 80,
+    y: 303,
+    w: 130,
+    h: 29
+}
+
+
 // Execute the get ready state tasks
 function doGetReady () {
     game.state.current = game.state.game
@@ -41,6 +58,14 @@ function doGameOver () {
         zambird.speedReset()
         score.reset()
         game.state.current = game.state.getReady
+    }
+
+    if (checkClickBounds(clickX, clickY, barbieBtn)){
+        console.log("barbie mode")
+    }
+
+    if (checkClickBounds(clickX, clickY, normalBtn)){
+        console.log("normal mode")
     }
 }
 

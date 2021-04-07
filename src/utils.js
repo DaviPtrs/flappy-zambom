@@ -1,3 +1,5 @@
+import { boardContext } from './consts/board.js'
+
 // Check if user clicked on object
 function checkClickBounds (clickX, clickY, object) {
     if (clickX >= object.x &&
@@ -10,4 +12,9 @@ function checkClickBounds (clickX, clickY, object) {
     }
 }
 
-export { checkClickBounds }
+function addText (text, x, y) {
+    boardContext.fillText(text, x, y)
+    boardContext.strokeText(text, x, y)
+}
+
+export { checkClickBounds, addText }
