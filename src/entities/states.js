@@ -82,16 +82,16 @@ const medal = {
     
     draw: function(){
         if (game.state.current === game.state.over){
-            if (score.value >= 1 && score.value <=5){
+            if (score.value >= 5 && score.value <=10){
                 boardContext.drawImage(sprite, this.sX - 48, this.sY - 46, this.width, this.height, this.x, this.y, this.width, this.height) 
             }
-            else if(score.value > 5 && score.value <=10){
+            else if(score.value > 10 && score.value <=15){
                 boardContext.drawImage(sprite, this.sX, this.sY - 46, this.width, this.height, this.x, this.y, this.width, this.height)
             }
-            else if(score.value > 10 && score.value <=15){
+            else if(score.value > 15 && score.value <=20){
                 boardContext.drawImage(sprite, this.sX - 48, this.sY, this.width, this.height, this.x, this.y, this.width, this.height)
             }
-            else if(score.value > 15){
+            else if(score.value > 20){
             boardContext.drawImage(sprite, this.sX, this.sY, this.width, this.height, this.x, this.y, this.width, this.height)
             }
         }
