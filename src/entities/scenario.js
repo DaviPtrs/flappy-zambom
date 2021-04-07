@@ -34,7 +34,7 @@ const foreground = {
     },
 
     update: function () {
-        if (game.state.current != game.state.over) {
+        if (game.state.current !== game.state.over) {
             this.x = (this.x - this.dx) % (this.w / 2)
         }
     }

@@ -1,5 +1,5 @@
-import { board, boardContext } from './../consts/board.js'
-import { foreground, groundY } from './../entities/scenario.js'
+import { boardContext } from './../consts/board.js'
+import { groundY } from './../entities/scenario.js'
 import { game, DEGREE, sprite } from './../consts/general.js'
 import { DIE } from './../consts/sfx.js'
 
@@ -56,14 +56,14 @@ const zambird = {
 
     update: function () {
         // If game is on getReady state, the bird will flap slowly
-        if (game.state.current == game.state.getReady) {
+        if (game.state.current === game.state.getReady) {
             this.period = 10
         } else {
             this.period = 5
         }
 
         // Each period, the frame will be incremented by 1
-        if (game.frames % this.period == 0) {
+        if (game.frames % this.period === 0) {
             this.frame += 1
         }
 
@@ -71,7 +71,7 @@ const zambird = {
         this.frame = this.frame % this.animation.length
 
         // Reset bird on getReady state
-        if (game.state.current == game.state.getReady) {
+        if (game.state.current === game.state.getReady) {
             this.y = 150
             this.rotation = 0 * DEGREE
         } else {
@@ -81,7 +81,7 @@ const zambird = {
             // if bird reach ground, then game over
             if ((this.y + (this.h / 2)) >= groundY) {
                 this.y = groundY - this.h / 2
-                if (game.state.current == game.state.game) {
+                if (game.state.current === game.state.game) {
                     game.state.current = game.state.over
                     DIE.play()
                 }

@@ -12,7 +12,7 @@ const getReady = {
     y: 80,
 
     draw: function () {
-        if (game.state.current == game.state.getReady) {
+        if (game.state.current === game.state.getReady) {
             boardContext.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h)
         }
     }
@@ -29,7 +29,7 @@ const gameOver = {
     y: 90,
 
     draw: function () {
-        if (game.state.current == game.state.over) {
+        if (game.state.current === game.state.over) {
             boardContext.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h)
         }
     }
@@ -46,11 +46,11 @@ const score = {
         boardContext.fillStyle = '#FFF'
         boardContext.strokeStyle = '#000'
 
-        if (game.state.current == game.state.game) { // Main game screen
+        if (game.state.current === game.state.game) { // Main game screen
             boardContext.lineWidth = 2
             boardContext.font = '35px Teko'
             this.addText(this.value, (board.width / 2) - 10, 50)
-        } else if (game.state.current == game.state.over) { // gameOver screen
+        } else if (game.state.current === game.state.over) { // gameOver screen
             boardContext.font = '25px Teko'
             this.addText(this.value, 200, 186)
             this.addText(this.best, 200, 228)

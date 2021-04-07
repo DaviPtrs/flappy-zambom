@@ -1,6 +1,6 @@
 import { board, boardContext } from './../consts/board.js'
 import { game, sprite } from './../consts/general.js'
-import { HIT, SCORE_S } from './../consts/sfx.js'
+import { HIT } from './../consts/sfx.js'
 import { zambird } from './../entities/zambird.js'
 import { score } from './../entities/states.js'
 
@@ -45,7 +45,7 @@ const pipes = {
         }
 
         // Add pipe on screen every 100 frames interval
-        if (game.frames % 100 == 0) {
+        if (game.frames % 100 === 0) {
             this.position.push({
                 x: board.width,
                 y: this.maxYPos * (Math.random() + 1)
