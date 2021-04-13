@@ -4,7 +4,9 @@ Jogo baseado no Flappy Bird com personalização inspirada no Professor da UFES 
 
 O desenvolvimento do jogo foi testado em navegadores baseados em Chromium.
 
-## Como rodar
+https://flappyzambon.davipetris.me/ **(Temporário)**
+
+## Como rodar localmente
 
 A forma mais fácil de rodar este querido e idolatrado video-jogo é, munido de `docker` e `docker-compose` instalados, executar o comando abaixo na raiz do projeto
 
