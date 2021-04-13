@@ -4,7 +4,9 @@ Jogo baseado no Flappy Bird com personalização inspirada no Professor da UFES 
 
 O desenvolvimento do jogo foi testado em navegadores baseados em Chromium.
 
-https://flappyzambon.davipetris.me/ **(Temporário)**
+O jogo ficará disponível no link abaixo **temporariamente** (até o fim da disciplina de LP 2020/2)
+
+https://flappyzambon.davipetris.me/ 
 
 ## Como rodar localmente
 
